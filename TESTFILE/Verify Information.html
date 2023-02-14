@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://ociservices.gov.in/callModify -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- saved from url=(0014)about:internet -->
+        <title> Verify Information </title>
+    <!-- AS-30.1.2019 viewport -->    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- AS-30.1.2019 viewport ended -->
+        <noscript><meta http-equiv="refresh" content="0; URL=jsDisabled" /> </noscript>
+
+        <link rel="StyleSheet" href="./Verify Information_files/mainStyleConf.css" media="screen">
+        <link rel="StyleSheet" href="./Verify Information_files/screen.css" media="screen">
+        <link rel="StyleSheet" href="./Verify Information_files/jquery-ui-1.8.20.custom.css" media="screen">
+        <script type="text/javascript" src="./Verify Information_files/jquery.js"></script>
+        <script type="text/javascript" src="./Verify Information_files/jquery.validate.js"></script> 
+        <script src="./Verify Information_files/mainJavascript.js"></script>
+        <script type="text/javascript" src="./Verify Information_files/jquery-ui.js">      
+        <script src="js/calender.js"></script>
+
+        <script type="text/javascript">
+            
+            function showUser(str)
+            {
+                             
+                if (str=="")
+                {
+                    //document.getElementById("txtHint").innerHTML="";
+                    return;
+                }
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                    
+                }
+                else
+                {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+              
+                xmlhttp.onreadystatechange = function ()
+                {
+                    if (xmlhttp.readyState==4)
+                    {
+                        if (xmlhttp.status == 200)
+                        {
+                            var time = xmlhttp.responseText;
+                            
+                            document.getElementById("fillMissionList").innerHTML=xmlhttp.responseText;
+                          
+                           
+                        
+                        }
+                    }
+                }
+                
+                
+                xmlhttp.open("POST","fetchSubMission.action?country="+str,true);
+                xmlhttp.send();
+                
+                  
+            }
+            
+            function toggleOccDetails(){
+                var x=$('#app_Occupation').val();
+                if(x=='18'){
+                    $('#OccupationDetailsRow').css('display','block');
+                    $('#app_Occupation_details').css('margin-left','-4px');
+                }
+                else{
+                    $('#OccupationDetailsRow').css('display','none');
+                    $('#app_Occupation_details').val('');
+                }
+            }
+        
+            function validateMission(){
+             
+                $("#firstForm").validate().element( "#mission_code" );
+            }
+            
+            
+        </script>
+        <script>
+            var message="";
+            ///////////////////////////////////
+            function clickIE() {if (document.all) {(message);return false;}}
+            function clickNS(e) {if 
+                (document.layers||(document.getElementById&&!document.all)) {
+                    if (e.which==2||e.which==3) {(message);return false;}}}
+            if (document.layers) 
+            {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+            else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+            document.oncontextmenu=new Function("return false")
+        </script>
+
+
+        <script>
+            $(document).keydown(function(e) {
+                var element = e.target.nodeName.toLowerCase();
+                if (element != 'input' && element != 'textarea') {
+                    if (e.keyCode === 8||e.keyCode === 116) {
+                        return false;
+                    }
+                }
+            }); 
+        </script>
+
+        <style>
+            
+        </style>
+
+
+
+
+
+    </head>
+
+    <body oncopy="return true" onpaste="return true" ondragstart="return false;" ondrop="return false;">
+     
+    <!-- AS-30.1.2019 edit header -->
+        <div id="header-bg">
+            <div id="header-image">
+                
+
+
+
+
+    
+        
+    
+    
+        <div class="hide-on-mobile hide-on-tab">
+            <img src="./Verify Information_files/header-image.png" alt="OCI header"></div><!-- AS 31.1.2019 add class-->
+                <div class="show-only-on-mobile">    
+                    <img src="./Verify Information_files/header-image400px.png" alt="OCI Header" style="width:100%"></div><!-- AS 31.1.2019 add -->
+                <div class="show-only-on-tab hide-on-mobile hide-on-desktop">
+                    <img src="./Verify Information_files/header-image400px.png" alt="OCI Header"></div>
+    
+
+
+            </div>
+        </div>
+    <!-- AS-30.1.2019 header edit ended -->        
+            
+        <div id="container" class="shadow">
+
+
+            <div id="mainContent">
+
+
+                <form action="https://ociservices.gov.in/callModify" method="POST" id="firstForm" autocomplete="OFF" novalidate="novalidate">
+                    <div id="allTheSteps"> 
+
+
+                        <input type="hidden" id="fileNumber" name="fileNumber" value="">
+                        <input type="hidden" id="tempAppId" name="tempAppId" value="211026640143215">
+                        <input type="hidden" name="mission_code" value="USAC">
+                        <input type="hidden" name="country_code" value="USA">
+
+                        <!--          <div class="row">
+                                      <div class="span960" style="text-align:center;">
+                                          <span class="pageHeading">Verify Information</span>    
+                                          <BR>
+                                          <img src="css/line.png" style="vertical-align:text-top"/>
+                                      </div>                               
+                                  </div><!-- row end -->  
+
+            <!-- AS 7.2.2019 add class hide-on-mobile -->            
+                    <table class="header-table-a hide-on-mobile" style="width:100%; margin-top: 20px">
+                        <tbody><tr>
+                            <th style="width: 20%"><span class="pageHeadingNonFirstTemp" style="color: red;font-weight: bold">                                    
+                                                                  
+                                </span>
+                            </th>
+                            
+                            <th style="width: 60%; text-align: center"><span class="pageHeadingNonFirst" style="margin-left:0px">Verify Information</span><br><img width="60%" src="./Verify Information_files/line.png" style="vertical-align:text-top;"></th> 
+               
+                            <th style="width: 20%"><span class="pageHeadingNonFirstTemp" style="text-decoration-color: red">Temporary Application ID<br><font style=" text-decoration-color: red"><b> 211026640143215</b></font></span></th>
+                        </tr>
+                    </tbody></table>
+            <!-- AS-7.2.2019 add div -->            
+                   <div class="show-only-on-mobile headerMarginAdj">
+                            <div class="width-100 center">
+                                <span class="pageHeadingNonFirst" style="margin-left:0px">Verify Information</span><br><img width="60%" src="./Verify Information_files/line.png" style="vertical-align:text-top;">
+                            </div>
+                            <div class="width-100"><span class="pageHeadingNonFirstTemp" style="display:block;color: red;font-weight: bold">                                    
+                                                                  
+                                </span>
+                            </div>
+                            <div class="width-100">
+                                <span class="pageHeadingNonFirstTemp" style="display:block;text-decoration-color: red">Temporary Application ID<br><font style=" text-decoration-color: red"><b> 211026640143215</b></font></span>
+                            </div>
+                            
+                        </div>
+            <!-- AS-7.2.2019 div ended -->            
+                            
+                    <!--    <table class="header-table-a" style="margin-left:20px;width:95%;">
+                        <tr>
+                            <th style="width: 180px"><span class="pageHeadingNonFirstTemp" style="color: red;font-weight: bold">                                    
+                                                                  
+                                </span>
+                            </th>
+                            <th><span class="pageHeading">Verify Information</span><BR><img src="css/line.png" style="vertical-align:text-top;margin-left: 0px;"/></th> 
+                            <th style="width: 150px"><span class="pageHeadingNonFirstTemp" id="msg" style="color: red;font-weight: bold">Temporary Application ID<br>                                    
+                                    211026640143215                                   
+                                </span>
+                            </th>
+                        </tr>
+                    </table>     -->  
+                            
+
+                        <div class="span920" style=" line-height:20px; text-align: center;">
+                            Please verify information provided by you. Submission of this form will never allow you to change your information for this application. If you need to change the information provided, click on Modify button provided below.
+
+                        </div>
+
+                        <div>
+                            <hr class="centerOrange">
+                        </div>
+
+                        <br>
+
+
+
+                        <div class="row">
+                            <div class="span960">                                  
+                                
+                                
+                                
+                                    <h4>Applicant Information</h4>
+                                
+                            </div>                               
+                        </div><!-- row end -->
+                        <br>
+                        <br>
+
+
+
+                        <table class="verifyTable">
+                            <tbody><tr>
+                                <th class="seventy">Country Selected</th>
+                                <td class="thisTD">USA</td>
+                            </tr>
+                            <tr>
+                                <th class="seventy"> Mission Selected</th>
+                                <td class="thisTD">CHICAGO</td>
+                            </tr>
+
+                              
+                                <tr>
+                                    <th class="seventy"> Surname</th>
+                                    <td class="thisTD">BALASUBRAMANI</td>
+                                </tr>
+                            
+                            
+                            <tr>
+                                <th class="seventy">Given Name</th>
+                                <td class="thisTD">RIYA</td>
+                            </tr>
+
+
+                            
+                            
+                                <tr>
+                                    <th class="seventy">Previous Name</th>
+                                    <td class="thisTD">Never Changed</td>
+                                </tr>
+                            
+
+
+                            <tr>
+                                <th class="seventy"> Sex</th>
+                                <td class="thisTD">FEMALE</td>
+                            </tr>
+                            <tr>
+                                <th class="seventy">  Date Of Birth</th>
+                                <td class="thisTD">17/DEC/2014</td>
+                            </tr>
+                            <tr>
+                                <th class="seventy">  Country Of Birth</th>
+                                <td class="thisTD">UNITED STATES</td>
+                            </tr>
+                            
+                          
+                            
+                            <tr>
+                                <th class="seventy"> Place Of Birth</th>
+                                <td class="thisTD">WEATON</td>
+                            </tr>
+                            <tr>
+                                <th class="seventy"> Current Nationality</th>
+                                <td class="thisTD">UNITED STATES</td>
+                            </tr>
+                            
+                             <tr>
+                                <th class="seventy"> National Identification Number</th>
+                                <td class="thisTD"></td>
+                            </tr>
+                            
+                            <tr>
+                                <th class="seventy"> Visible Mark</th>
+                                <td class="thisTD">MOLE ON RIGHT HAND</td>
+                            </tr>
+
+                           
+                            
+                            
+                            
+                        </tbody></table>
+
+                        <!-- family information starts -->
+                        <br>
+                        <hr class="centerOrange">
+                        <br>
+                        <div class="row">
+                            <div class="span960">
+                                <h4>Family Information</h4>
+                            </div>
+                        </div>
+                        <br><br>
+                        <table class="verifyTable">
+                                <tbody><tr>
+                                <th class="seventy"> Father's Name</th>
+                                <td class="thisTD">BALASUBRAMANI</td>
+                            </tr>
+                            <tr>
+                                <th class="seventy"> Father's Nationality</th>
+                                <td class="thisTD">INDIA</td>
+                            </tr>
+                            <tr>
+                                <th class="seventy"> Father's Profession</th>
+                                <td class="thisTD">PROFESSIONAL</td>
+                            </tr>
+                            <tr>
+                                <th class="seventy"> Mother's Name</th>
+                                <td class="thisTD">KALAIVANI</td>
+                            </tr>
+                            <tr>
+                                <th class="seventy"> Mother's Nationality</th>
+                                <td class="thisTD">INDIA</td>
+                            </tr>
+                            <tr>
+                                <th class="seventy"> Mother's Profession</th>
+                                <td class="thisTD">LAWYER</td>
+                            </tr>
+                               
+                            
+                        </tbody></table>
+
+                        <!-- family informatiaon ends -->
+                        <!-- passport information starts -->
+                        <br>
+                        <hr class="centerOrange">
+                        <br>
+                        <div class="row">
+                            <div class="span960">
+                                <h4>Passport Information</h4>
+                            </div>
+                        </div>
+                        <br><br>
+                        <table class="verifyTable">
+
+                            <tbody><tr>
+                                <th class="seventy">Passport Number</th>
+                                <td class="thisTD">567770499</td>
+                            </tr> 
+                            <tr>
+                                <th class="seventy">Date Of Issue</th>
+                                <td class="thisTD"> 11/FEB/2020</td>
+                            </tr> 
+                            
+                            <tr>
+                                <th class="seventy">Date Of Expiry</th>
+                                <td class="thisTD"> 10/FEB/2025</td>
+                            </tr> 
+                            
+                            <tr>
+                                <th class="seventy">Place Of Issue</th>
+                                <td class="thisTD">UNITED STATES</td>
+                            </tr>
+                            
+                            <tr>
+                                <th class="seventy">Previous Passport Number</th>
+                                <td class="thisTD">529829218</td>
+                            </tr>
+                            
+                        </tbody></table>
+
+
+
+                        <br>
+                         
+                        
+
+
+
+
+
+                        <br>
+
+                             
+                        
+
+
+
+
+
+
+                        <br>
+                        <hr class="centerOrange">
+                        <div class="row">
+                            <div class="span960">
+                                <br>
+                                <h4>Residential Address Details</h4>
+                            </div>
+                        </div>  
+
+                        <br><br>
+                        <table class="verifyTable">
+                            <tbody><tr>
+                                <th class="seventy">Present Address </th>
+                                <td class="thisTD">197 ROB ROY</td>
+                            </tr>
+                            <tr>
+                                <th class="seventy">&nbsp; </th>
+                                <td class="thisTD">SCHAUMBURG</td>
+                            </tr>
+                            
+                                <tr>
+                                    <th class="seventy">&nbsp; </th>
+                                    <td class="thisTD">ILLINOIS</td>
+                                </tr>
+                            
+                                
+                                   
+                            <tr>
+                                <th class="seventy">Mobile No</th>
+                                <td class="thisTD">8472127434</td>
+                            </tr>
+                             
+                            
+                               
+                             <tr>
+                                <th class="seventy">Telephone No </th>
+                                <td class="thisTD">8478509026</td>
+                            </tr>
+                             
+                            
+
+                              
+                                <tr>
+                                    <th class="seventy">Email </th>
+                                    <td class="thisTD">vbalaonline@gmail.com</td>
+                                </tr>
+                            
+                            
+                         <!-- 
+                           
+                            
+                                <tr>
+                                    <th class="seventy">Native Address </th>
+
+                                    <td class="thisTD">-</td>
+                                </tr>
+                            
+                       -->   
+                       
+                         
+                      <!--          
+                            
+                                <tr>
+                                    <th class="seventy">AADHAR No. </th>
+
+                                    <td class="thisTD">-</td>
+                                </tr>
+                              -->
+                                
+                               
+
+                        </tbody></table>
+
+
+                        <br> <br>
+
+                        <div style="margin-top:10px; text-align: right;width:100%; margin-bottom: 20px">
+                            <label id="btnDisp"> 
+                                <input type="hidden" name="token" value="20911a5b-3b2c-45c0-bd17-57542fb1687a">                         
+                                <input type="submit" id="submit1_id" class="nextButton page1" value="Modify" name="submit1"></label>    
+                            <input type="submit" class="nextButton" value="Submit" name="moveForward">
+                        </div>
+
+                        <br>
+                        <br> <br>
+
+                    </div><!-- end of  allTheSteps  -->
+
+                </form>
+
+            </div> <!-- main content end -->
+        </div> <!-- container end -->
+        <div id="design-bg"> 
+            <div id="mainContentBackground">
+            </div>
+        </div>
+        <div id="footer-bg">
+            <div id="footer-image">
+
+            </div>
+
+        </div><!-- footer-bg end -->
+
+
+    
+
+
+
+</body></html>
